@@ -51,7 +51,7 @@ public class IpLogRest {
                 System.out.println("Executing after routine..  ");
                 try {
                     String currentPath = new java.io.File( "." ).getCanonicalPath();
-                    this.execShellCmd(currentPath.concat("/after.sh"));
+                    this.execShellCmd(currentPath.concat("/after.sh ".concat(ip)));
                 } catch (IOException e) {
                     System.out.println("could not excute afterscript");
                     e.printStackTrace();
@@ -66,6 +66,7 @@ public class IpLogRest {
         ProcessBuilder processBuilder = new ProcessBuilder();
         processBuilder.command("bash", "-c", cmd);
         try {
+
             processBuilder.start();
         } catch (IOException e) {
             e.printStackTrace();
