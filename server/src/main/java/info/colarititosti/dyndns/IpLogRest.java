@@ -51,7 +51,9 @@ public class IpLogRest {
                 System.out.println("Executing after routine..  ");
                 try {
                     String currentPath = new java.io.File( "." ).getCanonicalPath();
-                    this.execShellCmd(currentPath.concat("/after.sh ".concat(ip)));
+                    String cmd = currentPath.concat("/after.sh ".concat(ip));
+                    System.out.println(cmd);
+                    this.execShellCmd(cmd);
                 } catch (IOException e) {
                     System.out.println("could not excute afterscript");
                     e.printStackTrace();
