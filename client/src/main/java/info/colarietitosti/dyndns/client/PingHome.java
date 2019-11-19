@@ -1,4 +1,4 @@
-package info.colarietitosti.supertools.backend.ipService;
+package info.colarietitosti.dyndns.client;
 
 import lombok.extern.java.Log;
 import lombok.extern.log4j.Log4j2;
@@ -8,9 +8,12 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
 
+import javax.annotation.PostConstruct;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 
@@ -18,6 +21,11 @@ import java.io.UnsupportedEncodingException;
 @Slf4j
 @Component
 public class PingHome {
+
+    @PostConstruct
+    public void init(){
+        log.info("Starting PingHome..");
+    }
 
     @Scheduled(fixedDelay = 600000)
     public void pingServer(){
