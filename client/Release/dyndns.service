@@ -1,0 +1,17 @@
+[Unit]
+Description=dyndns
+
+[Service]
+Type=simple
+PIDFile=/run/dyndnsCli.pid
+ExecStart=/usr/bin/java -jar /home/cola/sandbox/DynDnsNginx/client/Release/
+User=root
+Group=root
+WorkingDirectory=/opt/supertools/dyndns/release
+StandardOutput=/var/log/dyndnsCli.log
+StandardError=/var/log/dyndnsCli_err.log
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
