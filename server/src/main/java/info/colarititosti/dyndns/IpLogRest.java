@@ -47,6 +47,9 @@ public class IpLogRest {
                 System.out.println("reconfiguring nginx... ");
                 TemplateConfig.saveFilledTemplates(ip);
                 this.execShellCmd("nginx -s reload");
+
+                System.out.println("Executing after routine..  ");
+                this.execShellCmd("./after.sh");
                 System.out.println("done! ");
             }
         }
