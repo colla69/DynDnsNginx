@@ -18,16 +18,10 @@ import java.util.stream.Stream;
 @Component
 public class TemplateConfig {
 
-@PostConstruct
-public void test(){
-    TemplateConfig.saveFilledTemplates("dfs");
-}
-
     public static void saveFilledTemplates(String ip){
         try {
             String current = new java.io.File( "." ).getCanonicalPath();
             List<String> templates = getTemplates(current);
-
             for (String s : templates) {
                 System.out.println(s);
                 Path path = Paths.get(s);
