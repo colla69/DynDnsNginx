@@ -13,7 +13,6 @@ multiple cli
 
 ## Server
 simply add an application.properties file to the resources Path, containing the configuration you would like to run.
-
 ```
  server.port:9999
  
@@ -23,11 +22,9 @@ simply add an application.properties file to the resources Path, containing the 
  spring.datasource.password=<PASSWORD>
  spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5Dialect
 ```
-
-###THE SERVER NEEDS A DATABASE TO WORK
-####Table cration:<br>
+**THE SERVER NEEDS A DATABASE TO WORK**<br>
+**Table cration:<br>**
  *feel free to rename the table just think about the @Entity name if you do.*
-
 ``` 
 create table my_dashboard_ip_log
 (
@@ -41,20 +38,20 @@ create table my_dashboard_ip_log
 ## Client
 The client works out Of-The-Box, just follow the release instructions.
 
-##Release instructions
+#### Release instructions
 
 Each of the to projects contains a release-Directory, it contains a 
-*.service file to have the jar be deployed by systemd on boot. 
-**please pay attention to the contents, they ONLY work for my computers since they contain absolute paths.**
+\*.service file to have the jar be deployed by systemd on boot.
+**please pay attention to the contents, they ONLY work for my computers since they contain absolute paths.**<br>
 
-####New release: 
+#### New release:
 After developing changes, **clean and build** both projects, move the new compiled jars to their release Path and restart all services on all machines!
 I usually push the server jar to github to get it on server.
 
-###Contribuition   
+## Contribuitions 
 Feel free to contribute any way you want. Open Issues, contact me by email
 (a.colarietitosti@googlemail.com) or make a sacrifice to the Gods.. 
 Any help is highly appreciated ;)
 
-###Credits
+## Credits
 colla69 (Andrea Colarieti Tosti)
