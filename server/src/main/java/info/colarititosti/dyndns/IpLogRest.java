@@ -49,7 +49,13 @@ public class IpLogRest {
                 this.execShellCmd("nginx -s reload");
 
                 System.out.println("Executing after routine..  ");
-                this.execShellCmd("./after.sh");
+                try {
+                    String currentPath = new java.io.File( "." ).getCanonicalPath();
+                    this.execShellCmd(currentPath.concat("/after.sh"));
+                } catch (IOException e) {
+                    System.out.println("could not excute afterscript");
+                    e.printStackTrace();
+                }                
                 System.out.println("done! ");
             }
         }

@@ -20,8 +20,8 @@ public class TemplateConfig {
 
     public static void saveFilledTemplates(String ip){
         try {
-            String current = new java.io.File( "." ).getCanonicalPath();
-            List<String> templates = getTemplates(current);
+            String currentPath = new java.io.File( "." ).getCanonicalPath();
+            List<String> templates = getTemplates(currentPath);
             for (String s : templates) {
                 System.out.println(s);
                 Path path = Paths.get(s);
