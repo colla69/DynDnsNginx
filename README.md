@@ -24,7 +24,7 @@ simply add an application.properties file to the resources Path, containing the 
  spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5Dialect
 ```
 
-**NEEDS DATABASE**
+###THE SERVER NEEDS A DATABASE TO WORK
 ####Table cration:<br>
  *feel free to rename the table just think about the @Entity name if you do.*
 
@@ -49,4 +49,12 @@ Each of the to projects contains a release-Directory, it contains a
 
 ####New release: 
 After developing changes, **clean and build** both projects, move the new compiled jars to their release Path and restart all services on all machines!
-I usually push the server jar to github to get it on server.   
+I usually push the server jar to github to get it on server.
+
+###Contribuition   
+Feel free to contribute any way you want. Open Issues, contact me by email
+(a.colarietitosti@googlemail.com) or make a sacrifice to the Gods.. 
+Any help is highly appreciated ;)
+
+###Credits
+colla69 (Andrea Colarieti Tosti)
