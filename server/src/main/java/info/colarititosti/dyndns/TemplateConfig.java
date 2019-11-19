@@ -34,7 +34,7 @@ public void test(){
                 Charset charset = StandardCharsets.UTF_8;
                 String content = new String(Files.readAllBytes(path), charset);
                 content = content.replaceAll("\\[(.*?)\\]", ip);
-                Files.write(Paths.get("/etc/nginx/conf.d/".concat("")), content.getBytes(charset));
+                Files.write(Paths.get("/etc/nginx/conf.d/".concat(s)), content.getBytes(charset));
             }
         } catch (IOException e) {
             e.printStackTrace();
