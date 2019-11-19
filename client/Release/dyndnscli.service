@@ -1,13 +1,13 @@
 [Unit]
-Description=dyndns
+Description=dyndnscli
 
 [Service]
 Type=simple
 PIDFile=/run/dyndnsCli.pid
-ExecStart=/usr/bin/java -jar /home/cola/sandbox/DynDnsNginx/client/Release/
+ExecStart=/usr/bin/java -jar /home/cola/sandbox/DynDnsNginx/client/Release/client-0.0.1-SNAPSHOT.jar
 User=root
 Group=root
-WorkingDirectory=/opt/supertools/dyndns/release
+WorkingDirectory=/home/cola/sandbox/DynDnsNginx/client/Release
 StandardOutput=/var/log/dyndnsCli.log
 StandardError=/var/log/dyndnsCli_err.log
 Restart=always
