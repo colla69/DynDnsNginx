@@ -9,7 +9,7 @@ The server will save the data to a database (to install and setup separately),
 everytime an unknown IP posts the secret password to the server Nginx configuration scripts will be  
 overwritten in /etc/nginx/conf.d/ and the server will be restarted.
 multiple cli
-**multiple clients and configurability of nginx scripts is not ready yet, anyways feel free to use the code any way you want.**
+**multiple clients are not supported yet, anyways feel free to use the code any way you want.**
 
 ## Server
 simply add an application.properties file to the resources Path, containing the configuration you would like to run.
@@ -35,11 +35,29 @@ create table my_dashboard_ip_log
 );
 ```
 
+**THE SERVER REQUIRES TEMPLATES TO WORK**<br>
+Templates are read from the working directory. <br>
+The marker for IP replacement is `[<NewIp>]`<br>
+**Example:**
+```
+stream {
+upstream ssh {
+    server [<NewIp]:22;
+}
+server {
+    listen        80;
+    server_name ssh.cool.Dyn.Dns.com;
+    
+    ....
+
+    proxy_pass    ssh;
+} }
+
+```
 ## Client
 The client works Out-Of-The-Box, just follow the release instructions.
 
 #### Release instructions
-
 Each of the to projects contains a release-Directory, it contains a 
 \*.service file to have the jar be deployed by systemd on boot.
 **please pay attention to the contents, they ONLY work for my computers since they contain absolute paths.**<br>
