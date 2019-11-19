@@ -36,7 +36,7 @@ create table my_dashboard_ip_log
 ```
 
 ## Client
-The client works out Of-The-Box, just follow the release instructions.
+The client works Out-Of-The-Box, just follow the release instructions.
 
 #### Release instructions
 
